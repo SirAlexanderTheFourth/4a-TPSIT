@@ -18,10 +18,13 @@ typedef struct classifica{
 }Classifica;
 
 int main(){
-    Classifica classifica[MAX];
+
+    Classifica *class;
+    class=(Classifica*)malloc(16599*sizeof(Classifica));
     FILE *fp;
-    Classifica *rig=classifica;
-    char riga[MAX];
+    Classifica *rig=class;
+    char *riga;
+    riga=(char*)malloc(MAX*sizeof(char));
     fp = fopen("vgsales.csv", "r");
     if(fp == NULL){
         printf("Errore nell'apertura del file");
@@ -42,11 +45,13 @@ int main(){
         (*rig).Other_Sales = atof(strtok(NULL, ","));
         (*rig).Global_Sales = atof(strtok(NULL, ","));
 
+
         printf("\n %d, %s, %s, %d, %s, %s, %.3f, %.3f, %.3f, %.3f, %.3f" , (*rig).rank, (*rig).name, (*rig).platform, (*rig).year, (*rig).genre, (*rig).publisher, (*rig).NA_Sales, (*rig).EU_Sales, (*rig).JP_Sales, (*rig).Other_Sales, (*rig).Global_Sales);
         *rig++;
         }
+        
     }
-
+    free(class);
     fclose(fp);
     system("PAUSE");
     return 0;

@@ -7,7 +7,7 @@ int main(){
     int b[10]; 
 
     //allocazione dinamica
-    //fare sempre il casting a puntatore quando si usa la malloc (int*) altrimenti mallor ritorna void
+    //fare sempre il casting a puntatore quando si usa la malloc (int*) altrimenti malloc ritorna void
     int *a, n;
     n=f();//funzione che trova la grandezza dell'array
     a=(int*)malloc(n*sizeof(int));

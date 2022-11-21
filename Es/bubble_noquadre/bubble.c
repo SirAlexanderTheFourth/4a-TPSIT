@@ -14,13 +14,13 @@ l'algoritmo di bubble sort senza l'utilizzo di partentesi quadre
 
 void bubbleSort(int *d, int n){
 	int k, sup;
-	int scam;
+	int temp;
 	for (sup = n-1; sup > 0; sup--){
 		for (k = 0; k < sup ; k++){
 			if (*(d+k) > *(d+(k+1)))
-                scam = *(d+k);
+                temp = *(d+k);
 	            *(d+k) = *(d+(k+1));
-	            *(d+(k+1)) = scam;
+	            *(d+(k+1)) = temp;
 		}
 	}
 }

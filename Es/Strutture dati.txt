@@ -1,0 +1,8 @@
+STRUTTURE DATI
+
+struttura autoreferenziale: è una struttura che si può autoreferenzializzare.
+strucy node{
+	void *data;
+	struct node *next; //link
+};
+una struttura è autireferenziale se all'interno ha un tipo puntatore alla struttura stessa.

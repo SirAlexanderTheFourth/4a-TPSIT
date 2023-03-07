@@ -54,7 +54,7 @@ int  lunchezzalista(Node* lista){
 int  main()
 {
     int n;
-    Node* lista;
+    Node* lista=(Node*)  malloc(sizeof(Node));
     Node* l;
     lista=NULL;
     int cont=0;
@@ -62,9 +62,13 @@ int  main()
     {
         printf("Inserisci  un  naturale o  -1 per  terminare\n");
         scanf("%d",&n);
+        Node* element = (Node*)  malloc(sizeof(Node));
+        element->valore=n;
+        element->next=NULL;
+        
         if (n>=0) 
         {
-            if (lista==NULL) /*  prima  iterazione  */ 
+            if (lista==NULL) /*  prima  iterazione  */
             {
                 lista = (Node*)  malloc(sizeof(Node));
                 l = lista;
@@ -78,6 +82,8 @@ int  main()
             l->next = NULL;
             
         }
+        
+       
     } while (n>=0);
     l=lista;
     stampalista(l);
